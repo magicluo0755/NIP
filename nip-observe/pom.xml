@@ -10,10 +10,10 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>nip-obser</artifactId>
+    <artifactId>nip-observe</artifactId>
     <packaging>jar</packaging>
 
-    <name>NIP Obser</name>
+    <name>NIP Observe</name>
     <description>Observability module for NIP platform</description>
 
     <dependencies>

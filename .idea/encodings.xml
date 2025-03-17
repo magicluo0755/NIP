@@ -9,8 +9,8 @@
     <file url="file://$PROJECT_DIR$/nip-core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nip-management/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nip-management/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/nip-obser/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/nip-obser/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nip-observe/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nip-observe/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nip-registry/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nip-registry/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nip-utils/src/main/java" charset="UTF-8" />

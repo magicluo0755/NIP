@@ -21,7 +21,7 @@
         <module>nip-web</module>
         <module>nip-management</module>
         <module>nip-utils</module>
-        <module>nip-obser</module>
+        <module>nip-observe</module>
     </modules>
 
     <properties>

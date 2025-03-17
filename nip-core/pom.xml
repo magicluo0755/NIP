@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.nip</groupId>
+        <artifactId>nip-platform</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>nip-core</artifactId>
+    <packaging>jar</packaging>
+
+    <name>NIP Core</name>
+    <description>Core module for NIP platform</description>
+
+    <dependencies>
+        <!-- NIP Base -->
+        <dependency>
+            <groupId>com.nip</groupId>
+            <artifactId>nip-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Apache Camel Spring Boot Starter -->
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+</project>

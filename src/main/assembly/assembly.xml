@@ -6,83 +6,96 @@
     <formats>
         <format>zip</format>
     </formats>
-    <includeBaseDirectory>true</includeBaseDirectory>
-    <baseDirectory>nip-platform</baseDirectory>
+    <includeBaseDirectory>false</includeBaseDirectory>
 
-    <!-- 打包所有子模块的 JAR 文件到 lib 目录 -->
-    <moduleSets>
-        <moduleSet>
-            <includeSubModules>true</includeSubModules>
-            <sources>
-                <includeModuleDirectory>false</includeModuleDirectory>
-                <fileSets>
-                    <fileSet>
-                        <directory>${project.build.directory}</directory>
-                        <outputDirectory>lib</outputDirectory>
-                        <includes>
-                            <include>*.jar</include>
-                        </includes>
-                    </fileSet>
-                </fileSets>
-            </sources>
-        </moduleSet>
-    </moduleSets>
-
-    <!-- 打包启动脚本到 bin 目录 -->
     <fileSets>
+        <!-- 打包所有子模块的依赖 JAR 文件到 lib 目录 -->
         <fileSet>
-            <directory>${project.basedir}/nip-web/src/main/resources/bin</directory>
-            <outputDirectory>bin</outputDirectory>
+            <directory>${project.build.directory}/dependencies</directory>
+            <outputDirectory>lib</outputDirectory>
             <includes>
-                <include>*.sh</include>
-                <include>*.bat</include>
+                <include>*.jar</include>
             </includes>
         </fileSet>
 
-        <!-- 打包配置文件到 conf 目录 -->
+        <!--各子工程jar构建并打包到boot目录-->
         <fileSet>
-            <directory>${project.basedir}/nip-web/src/main/resources</directory>
+            <directory>${project.basedir}/nip-base/target</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>boot</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/nip-core/target</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>boot</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/nip-management/target</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>boot</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/nip-observe/target</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>boot</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/nip-registry/target</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>boot</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/nip-utils/target</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>boot</outputDirectory>
+        </fileSet>
+
+        <fileSet>
+            <directory>src/main/resources/conf</directory>
             <outputDirectory>conf</outputDirectory>
-            <includes>
-                <include>application.properties</include>
-                <include>logback.xml</include>
-            </includes>
         </fileSet>
-
-        <!-- 打包 apps 目录 -->
         <fileSet>
-            <directory>${project.basedir}/src/main/resources/apps</directory>
+            <directory>src/main/resources/bin</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <fileMode>755</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources/apps</directory>
             <outputDirectory>apps</outputDirectory>
-            <includes>
-                <include>**/*</include>
-            </includes>
         </fileSet>
-
-        <!-- 打包 logs 目录 -->
         <fileSet>
-            <directory>${project.basedir}/src/main/resources/logs</directory>
+            <directory>src/main/resources/logs</directory>
             <outputDirectory>logs</outputDirectory>
-            <includes>
-                <include>**/*</include>
-            </includes>
         </fileSet>
-
-        <!-- 打包 plugins 目录 -->
         <fileSet>
             <directory>${project.basedir}/src/main/resources/plugins</directory>
             <outputDirectory>plugins</outputDirectory>
-            <includes>
-                <include>**/*</include>
-            </includes>
         </fileSet>
-
-        <!-- 打包 tmp 目录 -->
         <fileSet>
             <directory>${project.basedir}/src/main/resources/tmp</directory>
             <outputDirectory>tmp</outputDirectory>
+         </fileSet>
+        <fileSet>
+            <directory>target</directory>
             <includes>
-                <include>**/*</include>
+                <include>*.jar</include>
             </includes>
+            <outputDirectory>lib</outputDirectory>
         </fileSet>
     </fileSets>
 </assembly>
